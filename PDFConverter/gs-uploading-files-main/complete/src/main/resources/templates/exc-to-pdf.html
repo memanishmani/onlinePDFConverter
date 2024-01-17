@@ -1,0 +1,114 @@
+<html xmlns:th="https://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Excel-to-PDF</title>
+		<link rel="icon" href="images/mlogo.png">
+				 
+		<!-- swiper css link  -->
+		<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+	 
+		<!-- font awesome cdn link  -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	 
+		<!-- custom css file link  -->
+		<link rel="stylesheet" href="css/style.css">
+	 
+	 </head>
+	 
+	 
+	 <body>
+	 
+	 
+	 
+	 <section class="header">
+	 
+		
+		<img src="images/mlogo.png" alt="" width="50" height="50">
+		<a href="#" class="logo">Online PDF Converter</a>
+		<nav class="navbar">
+		   <!-- <span>&#9776</span> -->
+			  <a href="/home">Home</a>
+			  <a href="/about">About</a>
+			  <a href="#C4">Contact</a>
+			  <a href="/formpage">Feedback</a>
+		</nav>
+	 
+		<div id="menu-btn" class="fas fa-bars"></div>
+	 
+	 </section>
+
+
+	<h1 th:text="${welcome}" align="center" style="color: black; font-size: 40px;"></h1>
+
+	<div align="center">
+		<form method="POST" enctype="multipart/form-data" action="/exc-to-pdf">
+			<table>
+				<tr align="center">
+					<td><h3>File to upload:</h3></td>
+				</tr>
+					<tr></tr>
+					<td align="center"><input type="file" name="file" style="background-color: wheat; font-size:40px;height: 60px; width: 520px; border-radius: 12px; color: rgb(52, 132, 96);"/></td>
+				</tr>
+				<tr>
+					<td id="btn" align="center"><input type="submit" value="Upload" style="background-color: red; font-size:30px;height: 50px; width: 200px; border-radius: 12px;"/></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<br>
+
+	<br>
+
+
+
+	<div align="center"; style="font-size:23px">
+		<ul>
+			<li th:each="file : ${files}">
+				<a th:href="${file}" th:text="${file}" />
+			</li>
+		</ul>
+	</div>
+
+	<section class="footer">
+
+		<div class="box-container">
+	 
+		   <div class="box">
+			  <h3>Quick Links</h3>
+			  <a href="/home"> <i class="fas fa-angle-right"></i> Home</a>
+			  <a href="/about"> <i class="fas fa-angle-right"></i> About</a>
+			  <!-- <a href="contact.html"> <i class="fas fa-angle-right"></i> Contact</a> -->
+			  <a href="/formpage"> <i class="fas fa-angle-right"></i> Feedback</a>
+		   </div>
+		
+	 
+		   <div class="box">
+			  <h3 id="C4">Contact Info</h3>
+			  <a href="#"> <i class="fas fa-envelope"></i> memanishmani@gmail.com </a>
+			  <a href="#"> <i class="fas fa-map"></i> Chennai, India - 600119  </a>
+		   </div>
+	 
+		   <div class="box">
+			  <h3>follow us</h3>
+			  <a href="https://www.facebook.com/manishkumar.mani.47718"> <i class="fab fa-facebook-f"></i> Facebook </a>
+			  <a href="https://www.instagram.com/memanishmani"> <i class="fab fa-instagram"></i> Instagram </a>
+			  <a href="https://www.linkedin.com/in/manish-kumar-mani-98a154244"> <i class="fab fa-linkedin"></i> Linkedin </a>
+		   </div>
+	 
+		</div>
+	 
+		<div class="credit"> Created by <span>Manish Kumar Mani</span> | all rights reserved! © </div>
+	 
+	 </section>
+	 
+	 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+	 <script src="js/script.js"></script>
+	 <script>
+		
+	 </script>
+
+</body>
+</html>
